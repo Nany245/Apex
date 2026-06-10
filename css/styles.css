@@ -1,0 +1,232 @@
+:root {
+    --primary: #002554;
+    --secondary: #0096C7;
+    --background: #F8FAFC;
+    --accent: #48CAE4;
+    --card: #FFFFFF;
+    --text: #ffffff;
+    --text-dark: #0f172a;
+    --text-secondary: #64748B;
+    --hero-end: #0077B6;
+}
+
+html {
+color: var(--text);
+font-family: poppins, sans-serif;
+background-color: var(--background);
+}
+
+header {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    margin: 0;
+    padding-top: 15px;
+    background: var(--primary);
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin-top: 3px;
+    margin-right: -70px;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+    border: 0px solid;
+    border-radius: 10px;
+    transition: background-color 0.3s ease; 
+}
+
+nav a:hover {
+    background-color: var(--accent);
+    border: 0px solid var(--accent);
+}
+
+.footer {
+    background-color: var(--primary);
+    color: var(--text);
+    font-size: 1.2rem;
+    margin-top: 7rem;
+    padding-bottom: 5px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-brand,
+.footer-links,
+.footer-contact {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer h3,
+.footer h4 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer p,
+.footer a {
+    margin: 1rem 0;
+    font-size:1.3rem;
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--accent);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 5px;
+    gap: 0px;
+    margin-top: -8px;
+}
+
+.footer-links li {
+    margin: 0.3rem 0;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(72, 202, 228, 0.35);
+    text-align: center;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: var(--text);
+}
+
+a {
+    color:  var(--secondary);
+    text-decoration: none;
+}
+
+p{
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--hero-end));
+    color: var(--text);
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px rgba(0, 37, 84, 0.18);
+}
+
+.hero h2,
+.hero p {
+    color: var(--text);
+}
+
+.hero p {
+    opacity: 0.92;
+}
+
+.card {
+    background: var(--card);
+    color: var(--text-dark);
+}
+
+.btn-primary,
+.btn-whatsapp {
+    background-color: var(--secondary);
+}
+
+.btn-primary:hover,
+.btn-whatsapp:hover {
+    background-color: var(--accent);
+}
+
+.btn-secondary {
+    border: 2px solid var(--accent);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    background: rgba(72, 202, 228, 0.12);
+}
+
+main {
+    color: var(--text-dark);
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#logo {
+    margin-top: -22px;
+    object-fit: cover;
+    width: auto;
+    height: 100px;
+}
+
+#logo-div{
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+#logo-text {
+    
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;                                                                                                                       
+    text-decoration: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1DA851;
+    box-shadow: 0 6px 20px rgba(29, 168, 81, 0.4);
+}
