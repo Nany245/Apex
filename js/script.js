@@ -1,10 +1,10 @@
-fetch('/pages/Header.html')
+fetch('pages/Header.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-container').innerHTML = data;
     });
 
-fetch('/pages/footer.html')
+fetch('pages/footer.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer-container').innerHTML = data;
