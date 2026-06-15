@@ -1,10 +1,10 @@
-fetch('/Apex/pages/Header.html')
+fetch('/pages/header.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-container').innerHTML = data;
     });
 
-fetch('/Apex/pages/footer.html')
+fetch('/pages/footer.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer-container').innerHTML = data;
@@ -72,3 +72,15 @@ document.addEventListener('click', (event) => {
 window.addEventListener('popstate', () => {
     loadPage(window.location.pathname + window.location.search + window.location.hash, false);
 });
+
+const formContacto = document.getElementById('form-contacto');
+if (formContacto) {
+    formContacto.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('.btn-enviar');
+        btn.textContent = 'Mensaje enviado correctamente';
+        btn.disabled = true;
+        btn.style.background = '#48CAE4';
+        btn.style.color = '#002554';
+    });
+}
