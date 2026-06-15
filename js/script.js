@@ -12,3 +12,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Script para llamar header/footer en cada pagina
+
+//header
+fetch('/Apex/pages/Header.html')
+  .then(response => response.text())
+  .then(data => {
+    const header = document.getElementById('header-container');
+    if (header) {
+      header.innerHTML = data;
+    }
+  });
+
+//footer
+fetch('/Apex/pages/footer.html')
+  .then(response => response.text())
+  .then(data => {
+    const footer = document.getElementById('footer-container');
+    if (footer) {
+      footer.innerHTML = data;
+    }
+  });
