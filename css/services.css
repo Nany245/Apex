@@ -1,4 +1,4 @@
-.services {
+#services {
     display: flex;              
     gap: 10px;                   
     justify-content: space-between; 
@@ -7,6 +7,7 @@
 
 .service-card {
     margin-top: 25px;
+    padding: 10px;
     align-items: center;
     background: linear-gradient(135deg, var(--primary), var(--hero-end));
     color: var(--text-dark);
@@ -14,7 +15,7 @@
     border-radius: 20px;
 }
 
-.service-card p {
+.service-card p, .service-card h3 {
     font-size: 1.2rem;
     color: var(--text);
 
