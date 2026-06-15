@@ -1,0 +1,21 @@
+.services {
+    display: flex;              
+    gap: 10px;                   
+    justify-content: space-between; 
+    padding: 15px;
+}
+
+.service-card {
+    margin-top: 25px;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary), var(--hero-end));
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    border-radius: 20px;
+}
+
+.service-card p {
+    font-size: 1.2rem;
+    color: var(--text);
+
+}

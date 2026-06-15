@@ -45,11 +45,8 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     padding: 5px;
-    margin-bottom: 30px;
-    transition: color 0.3s ease;
-    border: 0px solid;
     border-radius: 10px;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
@@ -230,3 +227,4 @@ body {
     background-color: #1DA851;
     box-shadow: 0 6px 20px rgba(29, 168, 81, 0.4);
 }
+
