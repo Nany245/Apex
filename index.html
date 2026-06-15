@@ -5,24 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex Electrónica</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="icon" type="image/png" sizes="32x32" href="img/Logo Apex.png">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-    <body>
-        <header>
-            <div id="logo-div">
-                <a href="index.html">
-                    <img id="logo" src="img/Logo Apex.png" alt="Apex Electrónica">
-                </a>
+<body>
 
-                <div id="logo-text">
-                    <strong>Apex Electrónica</strong>
-                    <br>Reparación de dispositivos electrónicos</br>
+    <header>
+        <div id="logo-div">
+            <a href="index.html">
+                <img id="logo" src="img/Logo Apex.png" alt="Apex Electrónica">
+            </a>
+            <div id="logo-text">
+                <strong>Apex Electrónica</strong>
+                <br>Reparación de dispositivos electrónicos<br>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="pages/servicios.html">Servicios</a></li>
+                <li><a href="pages/testimonios.html">Testimonios</a></li>
+                <li><a href="pages/contacto.html">Contacto</a></li>
+                <li><a href="pages/como-funciona.html">Como Funciona</a></li>
+                <li><a href="pages/tienda.html">Tienda</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-whatsapp">WhatsApp</a>
+    </header>
+
+    <main>
+
+        <section class="hero" id="inicio">
+            <div class="hero-lines"></div>
+            <div class="hero-glow"></div>
+            <div class="hero-left">
+                <div class="hero-eyebrow">
+                    <div class="eyebrow-line"></div>
+                    <span class="eyebrow-text">Servicio a domicilio · Santo Domingo</span>
+                </div>
+                <h1 class="hero-h1">
+                    Reparamos<br>
+                    lo que más<br>
+                    <span class="line-alt">importa.</span>
+                </h1>
+                <p class="hero-sub">
+                    Técnicos certificados para televisores, aires acondicionados, lavadoras, refrigeradoras y electrónica en general. Visita gratis. Garantía escrita por 6 meses en cada trabajo.
+                </p>
+                <div class="hero-cta">
+                    <a href="pages/contacto.html" class="btn-fill">
+                        Solicitar visita 
+                        <svg class="arrow-svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                    <a href="pages/tienda.html" class="btn-ghost">
+                        Ver tienda
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
-            
+        </section>
 
-            <nav>
+        <section class="services" id="servicios">
+            <div class="section-head">
+                <div><div class="section-kicker">01 — Lo que reparamos</div><h2 class="section-h2">Cubrimos casi todo.</h2></div>
+                <p class="section-aside">Si tu equipo no aparece aquí, escríbenos — casi siempre tenemos solución para equipos no listados.</p>
+            </div>
+            <div class="service-list">
+                <div class="service-item"><span class="si-num">01</span><div class="si-body"><div class="si-name">Televisores</div><div class="si-desc">Smart TV, OLED, LED, plasma. Pantalla rota, backlight, tarjeta lógica.</div></div><span class="si-badge badge-pop">Popular</span></div>
+                <div class="service-item"><span class="si-num">02</span><div class="si-body"><div class="si-name">Aires Acondicionados</div><div class="si-desc">Mantenimiento, carga de gas, compresor y tarjetas de control.</div></div></div>
+                <div class="service-item"><span class="si-num">03</span><div class="si-body"><div class="si-name">Lavadoras</div><div class="si-desc">Top load y front load. Motores, bombas, tableros electrónicos.</div></div></div>
+                <div class="service-item"><span class="si-num">04</span><div class="si-body"><div class="si-name">Refrigeradoras</div><div class="si-desc">No enfría, hace ruido, pierde frío. Termostatos, compresores, sellos.</div></div><span class="si-badge badge-urg">24h</span></div>
+                <div class="service-item"><span class="si-num">05</span><div class="si-body"><div class="si-name">Celulares & Tablets</div><div class="si-desc">Pantallas rotas, batería, carga, agua, software.</div></div></div>
+                <div class="service-item"><span class="si-num">06</span><div class="si-body"><div class="si-name">Laptops & PCs</div><div class="si-desc">No enciende, pantalla, teclado, placa madre — diagnóstico gratis.</div></div></div>
+                <div class="service-item"><span class="si-num">07</span><div class="si-body"><div class="si-name">Microondas</div><div class="si-desc">No calienta, chispas, panel de control, magnetrón y fusibles.</div></div></div>
+                <div class="service-item"><span class="si-num">08</span><div class="si-body"><div class="si-name">Audio & Video</div><div class="si-desc">Equipos de sonido, home theater, amplificadores, receptores.</div></div></div>
+            </div>
+        </section>
+
+        <section class="how" id="proceso">
+            <div style="position:relative;z-index:1">
+                <div class="section-kicker">02 — Proceso</div>
+                <h2 class="section-h2" style="margin-top:10px">Cuatro pasos.<br>Un técnico en tu puerta.</h2>
+                <div class="steps-scroller">
+                    <div class="step-card"><div class="step-dot"></div><div class="step-n">Paso 01</div><div class="step-title">Cuéntanos el problema</div><div class="step-desc">Llámanos, escríbenos por WhatsApp o usa el formulario. En minutos confirmamos tu solicitud.</div></div>
+                    <div class="step-card"><div class="step-dot"></div><div class="step-n">Paso 02</div><div class="step-title">Asignamos el técnico</div><div class="step-desc">Seleccionamos al técnico certificado para tu equipo. Te contacta en menos de 2 horas para coordinar.</div></div>
+                    <div class="step-card"><div class="step-dot"></div><div class="step-n">Paso 03</div><div class="step-title">Diagnóstico en casa</div><div class="step-desc">El técnico visita tu hogar, revisa el equipo y te da un presupuesto claro. Sin obligación de pago.</div></div>
+                    <div class="step-card" style="padding-right:0"><div class="step-dot" style="background:#fff;box-shadow:0 0 0 2px #fff"></div><div class="step-n">Paso 04</div><div class="step-title">Reparado y garantizado</div><div class="step-desc">Aprobado el presupuesto, reparamos en el sitio. Emitimos garantía escrita por 6 meses.</div></div>
+                </div>
+                <div class="how-cta-row"><a href="pages/contacto.html" class="btn-fill">Contáctanos</a><span class="how-cta-note"></span></div>
+            </div>
+        </section>
+
+        <section class="store" id="tienda">
+            <div class="section-head"><div><div class="section-kicker">03 — Tienda</div><h2 class="section-h2">Repuestos & Accesorios</h2></div></div>
+            <div class="store-controls"><button class="pill on">Todo</button><button class="pill">Repuestos TV</button><button class="pill">Lavadoras</button><button class="pill">Aires</button><button class="pill">Refrigeradoras</button><button class="pill">Cables & Accesorios</button><button class="pill">Herramientas</button></div>
+            <div class="products-track-wrap"><div class="products-track" id="track">
+                <div class="product-card"><div class="pc-img"><img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400&h=300&fit=crop&auto=format" alt="Panel LED TV" loading="lazy"><span class="pc-sticker s-hot">Más vendido</span></div><div class="pc-body"><div class="pc-cat">Repuestos TV</div><div class="pc-name">Panel LED 32" Universal</div><div class="pc-stars">★★★★★ <span>(83)</span></div><div class="pc-foot"><button class="add-btn">+ Agregar</button></div></div></div>
+                <div class="product-card"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&auto=format" alt="Placa electrónica lavadora" loading="lazy"></div><div class="pc-body"><div class="pc-cat">Lavadoras</div><div class="pc-name">Placa inverter LG WD Series</div><div class="pc-stars">★★★★★ <span>(41)</span></div><div class="pc-foot"><button class="add-btn">+ Agregar</button></div></div></div>
+                <div class="product-card"><div class="pc-img"><img src="https://images.unsplash.com/photo-1625961332771-3f40b0e2bdcf?w=400&h=300&fit=crop&auto=format" alt="Capacitor compresor aire" loading="lazy"><span class="pc-sticker s-sale">Oferta</span></div><div class="pc-body"><div class="pc-cat">Aires</div><div class="pc-name">Capacitor compresor 25µF</div><div class="pc-stars">★★★★★ <span>(210)</span></div><div class="pc-foot"><button class="add-btn">+ Agregar</button></div></div></div>
+                <div class="product-card"><div class="pc-img"><img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&h=300&fit=crop&auto=format" alt="Termostato refrigeradora" loading="lazy"></div><div class="pc-body"><div class="pc-cat">Refrigeradoras</div><div class="pc-name">Termostato frigorífico NTC 10k</div><div class="pc-stars">★★★★★ <span>(156)</span></div><div class="pc-foot"><button class="add-btn">+ Agregar</button></div></div></div>
+                <div class="product-card"><div class="pc-img"><img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop&auto=format" alt="Cable HDMI" loading="lazy"><span class="pc-sticker s-pop">Popular</span></div><div class="pc-body"><div class="pc-cat">Cables & Accesorios</div><div class="pc-name">Kit cable HDMI 2.12m (2 pack)</div><div class="pc-stars">★★★★★ <span>(334)</span></div><div class="pc-foot"><button class="add-btn">+ Agregar</button></div></div></div>
+                <div class="product-card"><div class="pc-img"><img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=300&fit=crop&auto=format" alt="Soldador electrónico" loading="lazy"></div><div class="pc-body"><div class="pc-cat">Herramientas</div><div class="pc-name">Soldador temperatura ajustable</div><div class="pc-stars">★★★★☆ <span>(98)</span></div><div class="pc-foot"><button class="add-btn">+ Agregar</button></div></div></div>
+                <div class="product-card"><div class="pc-img"><img src="https://images.unsplash.com/photo-1520520731457-9283dd14aa66?w=400&h=300&fit=crop&auto=format" alt="Control remoto TV" loading="lazy"></div><div class="pc-body"><div class="pc-cat">Repuestos TV</div><div class="pc-name">Control remoto universal TV</div><div class="pc-stars">★★★★★ <span>(298)</span></div><div class="pc-foot"><button class="add-btn">+ Agregar</button></div></div></div>
+                <div class="product-card"><div class="pc-img"><img src="https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=400&h=300&fit=crop&auto=format" alt="Motor bomba lavadora" loading="lazy"><span class="pc-sticker s-new">Nuevo</span></div><div class="pc-body"><div class="pc-cat">Lavadoras</div><div class="pc-name">Motor bomba lavadora 50W</div><div class="pc-stars">★★★★☆ <span>(52)</span></div><div class="pc-foot"><button class="add-btn">+ Agregar</button></div></div></div>
+            </div></div>
+            <div class="track-nav"><button class="track-btn" id="prev" onclick="scrollStore(-1)">←</button><button class="track-btn" id="next" onclick="scrollStore(1)">→</button></div>
+        </section>
+
+        <section class="reviews" id="clientes">
+            <div class="section-kicker">04 — Clientes</div>
+            <h2 class="section-h2" style="margin-top:10px">Lo que dicen<br>quienes ya confiaron.</h2>
+            <div class="reviews-grid">
+                <div class="review-card"><div class="rv-stars">★★★★★</div><p class="rv-text" style="font-size:18px;line-height:1.65">"El técnico llegó puntual, diagnosticó el problema en 15 minutos y lo resolvió en la misma visita. El precio fue justo y me dieron garantía. Lo recomiendo 100%."</p><div class="rv-foot"><div class="rv-avatar" style="background:var(--sky)">MG</div><div><div class="rv-name">María González</div><div class="rv-meta">Reparación de Lavadora · Caracas, Miranda</div></div></div></div>
+                <div class="review-card"><div class="rv-stars">★★★★★</div><p class="rv-text">"Pensé que el televisor no tenía arreglo, pero APEX lo dejó como nuevo. El técnico fue muy profesional y me explicó cada paso. Excelente servicio."</p><div class="rv-foot"><div class="rv-avatar" style="background:var(--cyan);color:var(--navy)">CH</div><div><div class="rv-name">Carlos Herrera</div><div class="rv-meta">TV LED 55" — Pantalla negra · Valencia</div></div></div></div>
+                <div class="review-card"><div class="rv-stars">★★★★★</div><p class="rv-text">"Rápido, eficiente y precio razonable. El aire lleva 4 meses funcionando perfectamente. Definitivamente mi servicio técnico de confianza."</p><div class="rv-foot"><div class="rv-avatar" style="background:var(--blue)">LM</div><div><div class="rv-name">Luisa Mendoza</div><div class="rv-meta">Aire Acondicionado · Maracaibo, Zulia</div></div></div></div>
+                <div class="review-card"><div class="rv-stars">★★★★☆</div><p class="rv-text">"Mi refrigeradora dejó de enfriar de noche y al día siguiente APEX ya tenía un técnico en casa. Lo arreglaron en 2 horas. Servicio increíble."</p><div class="rv-foot"><div class="rv-avatar" style="background:var(--navy);border:1px solid rgba(72,202,228,0.2)">PC</div><div><div class="rv-name">Pedro Castillo</div><div class="rv-meta">Refrigeradora Samsung · Barquisimeto</div></div></div></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Apex Electrónica</h3>
+                <p>Reparación y mantenimiento de equipos electrónicos.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces</h4>
                 <ul>
                     <li><a href="pages/servicios.html">Servicios</a></li>
                     <li><a href="pages/testimonios.html">Testimonios</a></li>
@@ -30,52 +139,41 @@
                     <li><a href="pages/como-funciona.html">Como Funciona</a></li>
                     <li><a href="pages/tienda.html">Tienda</a></li>
                 </ul>
-            </nav>
-
-            <a href="#" class="btn-whatsapp">
-                WhatsApp
-            </a>
-        </header>
-
-        <main>
-            <section class="hero">
-                <h2>¡Bienvenido a Apex Electrónica!</h2>
-                <p>Tu tienda de electrónica de confianza.</p>
-
-            </section>
-        </main>
-
-        <footer class="footer">
-            <div class="footer-container">
-
-                <div class="footer-brand">
-                    <h3>Apex Electrónica</h3>
-                    <p>Reparación y mantenimiento de equipos electrónicos.</p>
-                </div>
-
-                <div class="footer-links">
-                  <h4>Enlaces</h4>
-                    <ul>
-                        <li><a href="pages/servicios.html">Servicios</a></li>
-                        <li><a href="pages/testimonios.html">Testimonios</a></li>
-                        <li><a href="pages/contacto.html">Contacto</a></li>
-                        <li><a href="pages/como-funciona.html">Como Funciona</a></li>
-                        <li><a href="pages/tienda.html">Tienda</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contact">
-                    <h4>Contacto</h4>
-                    <p>📞 (000)000-0000</p>
-                    <p>📧 adrix01x@gmail.com</p>
-                </div>
-
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Apex Electrónica. Todos los derechos reservados.</p>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p>📞 (000)000-0000</p>
+                <p>📧 adrix01x@gmail.com</p>
             </div>
-        </footer>
-        <script src="js/script.js"></script>
-    </body>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Apex Electrónica. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Funcionalidad del carrusel de tienda
+        let storePos = 0;
+        const storeStep = 1;
+        function scrollStore(dir) {
+            const track = document.getElementById('track');
+            if(!track) return;
+            const cards = track.querySelectorAll('.product-card');
+            if(!cards.length) return;
+            const card = cards[0];
+            const cardW = card.offsetWidth + 20;
+            const max = Math.max(0, cards.length - 4);
+            storePos = Math.max(0, Math.min(max, storePos + dir * storeStep));
+            track.style.transform = `translateX(-${storePos * cardW}px)`;
+        }
+        // Filtro simple para los pills
+        document.querySelectorAll('.pill').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
+                this.classList.add('on');
+            });
+        });
+    </script>
+</body>
 </html>
