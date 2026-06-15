@@ -231,16 +231,3 @@ body {
     box-shadow: 0 6px 20px rgba(29, 168, 81, 0.4);
 }
 
-.service-card {
-    margin-top: 25px;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, var(--primary), var(--hero-end));
-    color: var(--text-dark);
-    border-radius: 10px;
-}
-
-.service-card p {
-    color: var(--text);
-
-}
