@@ -1,6 +1,6 @@
 #services {
     display: flex;              
-    gap: 10px;                   
+    gap: 20px;                   
     justify-content: space-between; 
     padding: 15px;
 }
@@ -19,4 +19,10 @@
     font-size: 1.2rem;
     color: var(--text);
 
+}
+
+.service-card img {
+    width: 100%;
+    height: 14rem;
+    border-radius: 15px;
 }
