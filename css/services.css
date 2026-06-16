@@ -1,3 +1,15 @@
+:root {
+    --primary: #002554;
+    --secondary: #0096C7;
+    --background: #F8FAFC;
+    --accent: #48CAE4;
+    --card: #FFFFFF;
+    --text: #ffffff;
+    --text-dark: #0f172a;
+    --text-secondary: #64748B;
+    --hero-end: #0077B6;
+}
+
 #services {
     display: flex;              
     gap: 20px;                   
@@ -6,6 +18,31 @@
 }
 
 .service-card {
+    margin-top: 10px;
+    padding: 7px;
+    align-content: center;
+    background: linear-gradient(135deg, var(--primary), var(--hero-end));
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    border-radius: 20px;
+}
+
+.service-card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+.service-card p, .service-card h3 {
+    color: var(--text);
+
+}
+
+.service-card img {
+    width: 100%;
+    height: 14rem;
+    border-radius: 15px;;
+}
+
+.devices-card {
     margin-top: 25px;
     padding: 10px;
     align-items: center;
@@ -15,14 +52,72 @@
     border-radius: 20px;
 }
 
-.service-card p, .service-card h3 {
-    font-size: 1.2rem;
-    color: var(--text);
+.devices-card h3{
+    margin-top: 1px;
+    font-size: 1.7rem;
+    text-align: center;
 
 }
 
-.service-card img {
-    width: 100%;
-    height: 14rem;
+.devices-card p, .devices-card h3 {
+    color: var(--text);
+    align-content: center;
+}
+
+.devices-card p{
+    font-size: 1.5rem;
+}
+
+.devices-card img {
+    width: 10rem;
+    height: auto;
     border-radius: 15px;
+}
+
+.inner-card{
+    margin-top: -60px;
+    display: flex;
+    gap: 20px;
+}
+
+.eyebrow {
+  display: inline-block;
+    background: rgba(72, 202, 228, 0.15);
+    color: #48CAE4;
+    border: 1px solid rgba(72, 202, 228, 0.35);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    margin-top: 10px;
+}
+
+.contact a {
+    transition: all 0.3s ease;
+}
+
+.contact a:hover {
+    color: 0 0 5px var(--accent);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    
+}
+
+#devices-header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }

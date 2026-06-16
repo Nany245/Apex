@@ -143,6 +143,7 @@ p{
 
 .hero h2,
 .hero p {
+    font-weight: 700;
     color: var(--text);
 }
 
