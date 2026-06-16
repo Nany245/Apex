@@ -1,0 +1,73 @@
+/* ===========================================================
+   Cargar SIEMPRE después de contact.css.
+   =========================================================== */
+
+/* ---------- TABLET ANCHA (≤ 980px) ---------- */
+@media (max-width: 980px) {
+    .beneficios {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ---------- TABLET (≤ 900px) ---------- */
+@media (max-width: 900px) {
+    .grid-contacto {
+        grid-template-columns: 1fr;
+        margin-top: 32px;
+    }
+}
+
+/* ---------- MÓVIL GRANDE (≤ 680px) ---------- */
+@media (max-width: 680px) {
+    .hero-contacto {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .beneficios {
+        margin-top: 28px;
+        padding: 0;
+    }
+
+    .fila-doble {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario-wrap,
+    .datos {
+        padding: 22px;
+    }
+
+    .hero-acciones {
+        flex-direction: column;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-ghost {
+        justify-content: center;
+    }
+
+    .faq-item summary {
+        font-size: 15px;
+        padding: 16px 18px;
+    }
+
+    .faq-item p {
+        padding: 0 18px 18px 18px;
+    }
+}
+
+/* ---------- MÓVIL (≤ 440px) ---------- */
+@media (max-width: 440px) {
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+
+    .chips-grupo {
+        gap: 8px;
+    }
+
+    .chip-radio span {
+        padding: 8px 13px;
+        font-size: 13px;
+    }
+}

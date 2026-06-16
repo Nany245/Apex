@@ -1,17 +1,4 @@
-// Script para manejar navegación y eventos
-document.addEventListener('DOMContentLoaded', function() {
-    const formContacto = document.getElementById('form-contacto');
-    if (formContacto) {
-        formContacto.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('.btn-enviar');
-            btn.textContent = 'Mensaje enviado correctamente';
-            btn.disabled = true;
-            btn.style.background = '#48CAE4';
-            btn.style.color = '#002554';
-        });
-    }
-});
+// El manejo del formulario de contacto vive en form.js
 
 // Script para llamar header/footer en cada pagina
 
@@ -41,6 +28,22 @@ document.querySelectorAll("a").forEach(link => {
         const href = this.href;
 
         if (!href) return;
+
+        // Enlaces internos de la misma página: scroll suave sin recargar
+        const hash = this.getAttribute("href");
+        if (hash && hash.startsWith("#")) {
+            const destino = document.querySelector(hash);
+            if (destino) {
+                e.preventDefault();
+                destino.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+            return;
+        }
+
+        // Enlaces externos o que abren en nueva pestaña: no interceptar
+        if (this.target === "_blank" || /^(mailto:|tel:|https?:\/\/)/.test(hash || "")) {
+            return;
+        }
 
         e.preventDefault();
         document.body.classList.add("fade-out");
