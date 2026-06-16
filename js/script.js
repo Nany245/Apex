@@ -34,3 +34,19 @@ fetch('/Apex/pages/footer.html')
       footer.innerHTML = data;
     }
   });
+
+//fade-out
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        const href = this.href;
+
+        if (!href) return;
+
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 300);
+    });
+});
