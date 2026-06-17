@@ -10,6 +10,16 @@
     --hero-end: #0077B6;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.menu-toggle {
+    display: none;
+}
+
 html {
 color: var(--text);
 font-family: poppins, sans-serif;
@@ -22,9 +32,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    min-height: 80px;
+    height: auto;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding-top: 15px;
     background: var(--primary);
 }
@@ -34,7 +45,7 @@ nav ul {
     gap: 10px;
     list-style: none;
     margin-top: 3px;
-    margin-right: -70px;
+    margin-right: 10px;
 }
 
 nav li {
@@ -55,6 +66,10 @@ nav a:hover {
     border: 0px solid var(--accent);
 }
 
+footer{
+    margin: 0 auto;
+}
+
 .footer {
     background-color: var(--primary);
     color: var(--text);
@@ -67,7 +82,7 @@ nav a:hover {
     min-width: 200px;
     max-width: 1200px;
     margin: 0 auto;
-    padding-left: 50px;
+    padding-left: 30px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -81,6 +96,7 @@ nav a:hover {
     min-width: 220px;
 }
 
+
 .footer h3,
 .footer h4 {
     color: var(--accent);
@@ -91,10 +107,10 @@ nav a:hover {
 .footer p,
 .footer a {
     margin: 1rem 0;
-    font-size:1.3rem;
+    font-size:1.25rem;
     color: var(--text);
     text-decoration: none;
-    line-height: 1;
+    line-height: 1.5;
     transition: color 0.3s ease;
 }
 
@@ -158,13 +174,24 @@ p{
     color: var(--text-dark);
 }
 
-.btn-primary,
-.btn-whatsapp {
-    background-color: var(--secondary);
+.btn-primary {
+     background: var(--secondary);
+    color: var(--text);
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin-bottom: 14px;
+    margin-right: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background .2s;
 }
 
-.btn-primary:hover,
-.btn-whatsapp:hover {
+.btn-primary:hover {
     background-color: var(--accent);
 }
 
@@ -228,16 +255,22 @@ body.fade-out {
 }
 
 .btn-whatsapp {
-    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    z-index: 9999;
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: #25D366;
-    color: white;                                                                                                                       
-    text-decoration: none;
-    padding: 15px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    padding: 7px;
+    border-radius: 50%;
+
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
@@ -245,5 +278,11 @@ body.fade-out {
 .btn-whatsapp:hover {
     background-color: #1DA851;
     box-shadow: 0 6px 20px rgba(29, 168, 81, 0.4);
+}
+
+#WS-img {
+height: 100%;
+width: 100%;
+object-fit: contain;
 }
 

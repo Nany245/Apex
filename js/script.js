@@ -19,6 +19,14 @@ fetch('/Apex/pages/footer.html')
     const footer = document.getElementById('footer-container');
     if (footer) {
       footer.innerHTML = data;
+    
+    //Menu Hamburguesa
+const menuBtn = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
     }
   });
 
