@@ -9,6 +9,17 @@ fetch('/Apex/pages/Header.html')
     const header = document.getElementById('header-container');
     if (header) {
       header.innerHTML = data;
+
+      // Menú hamburguesa (el header se inyecta aquí, por eso va dentro)
+      const menuBtn = header.querySelector('.menu-toggle');
+      const nav = header.querySelector('nav');
+      if (menuBtn && nav) {
+        menuBtn.addEventListener('click', () => nav.classList.toggle('active'));
+        // cerrar el menú al pulsar un enlace
+        nav.querySelectorAll('a').forEach(a =>
+          a.addEventListener('click', () => nav.classList.remove('active'))
+        );
+      }
     }
   });
 
@@ -19,14 +30,6 @@ fetch('/Apex/pages/footer.html')
     const footer = document.getElementById('footer-container');
     if (footer) {
       footer.innerHTML = data;
-    
-    //Menu Hamburguesa
-const menuBtn = document.querySelector('.menu-toggle');
-const nav = document.querySelector('nav');
-
-menuBtn.addEventListener('click', () => {
-    nav.classList.toggle('active');
-});
     }
   });
 
