@@ -1,0 +1,276 @@
+/* ===========================================================
+   APEX ELECTRÓNICA — COBERTURA
+   Paleta: navy #002554 · azul #0096C7 · cyan #48CAE4
+   (El responsive vive en responsive.css)
+   =========================================================== */
+
+/* ---------- HERO ---------- */
+.cb-hero {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 5rem 2rem;
+    background: radial-gradient(circle at 50% -20%, #0a3a6b 0%, #002554 60%);
+    border-radius: 24px;
+    box-shadow: 0 20px 45px rgba(0, 37, 84, 0.3);
+}
+
+.cb-glow { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+.cb-glow-1 { width: 300px; height: 300px; background: #0096C7; opacity: 0.28; top: -130px; right: -60px; }
+.cb-glow-2 { width: 240px; height: 240px; background: #48CAE4; opacity: 0.16; bottom: -120px; left: -70px; }
+
+.cb-hero-in { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+
+.cb-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(72, 202, 228, 0.15);
+    color: #9fe6f7;
+    border: 1px solid rgba(72, 202, 228, 0.4);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.cb-hero h2 { color: #fff; font-size: clamp(2rem, 6vw, 3.1rem); line-height: 1.1; margin: 0 0 16px; }
+.cb-hl { color: #48CAE4; }
+.cb-hero p { color: rgba(255, 255, 255, 0.9); font-size: clamp(1rem, 2.4vw, 1.2rem); line-height: 1.6; max-width: 600px; margin: 0 auto 26px; }
+
+.cb-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.cb-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 26px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cb-btn-1 { background: #48CAE4; color: #002554; box-shadow: 0 8px 22px rgba(72, 202, 228, 0.35); }
+.cb-btn-1:hover { transform: translateY(-2px); background: #fff; }
+.cb-btn-2 { background: rgba(255, 255, 255, 0.08); color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.4); }
+.cb-btn-2:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.16); border-color: #fff; }
+
+/* ---------- ENCABEZADO DE SECCIÓN ---------- */
+.cb-head { text-align: center; max-width: 640px; margin: 64px auto 28px; }
+
+.cb-eyebrow {
+    display: inline-block;
+    background: rgba(0, 150, 199, 0.1);
+    color: #0096C7;
+    border: 1px solid rgba(0, 150, 199, 0.25);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.cb-head h3 { color: #002554; font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.2; margin: 0 0 10px; }
+.cb-head p { color: #64748B; font-size: clamp(1rem, 2vw, 1.08rem); line-height: 1.6; margin: 0; }
+
+/* ---------- MAPA + ZONAS ---------- */
+.cb-mapa-wrap {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+#map {
+    height: 460px;
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 14px 36px rgba(0, 37, 84, 0.12);
+    z-index: 0;
+}
+
+.cb-zonas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+.cb-zona {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #eef2f7;
+    border-left: 4px solid #0096C7;
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: #002554;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 6px 18px rgba(0, 37, 84, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cb-zona:hover { transform: translateX(4px); box-shadow: 0 10px 24px rgba(0, 37, 84, 0.12); }
+.cb-zona svg { color: #0096C7; flex-shrink: 0; }
+
+.cb-punto {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(0, 150, 199, 0.15);
+}
+
+.cb-mapa-nota {
+    text-align: center;
+    color: #64748B;
+    font-size: 14.5px;
+    margin: 22px auto 0;
+    max-width: 620px;
+}
+
+/* ---------- PASOS ---------- */
+.cb-pasos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+.cb-paso {
+    position: relative;
+    background: #fff;
+    border: 1px solid #eef2f7;
+    border-radius: 18px;
+    padding: 28px 22px;
+    box-shadow: 0 8px 26px rgba(0, 37, 84, 0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cb-paso:hover { transform: translateY(-5px); box-shadow: 0 18px 38px rgba(0, 37, 84, 0.13); border-color: rgba(0, 150, 199, 0.25); }
+
+.cb-paso-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0096C7, #48CAE4);
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 18px rgba(0, 150, 199, 0.3);
+}
+
+.cb-paso h4 { color: #002554; font-size: 17px; margin: 0 0 8px; }
+.cb-paso p { color: #64748B; font-size: 14.5px; line-height: 1.6; margin: 0; }
+
+/* ---------- CONFIANZA ---------- */
+.cb-confianza { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+.cb-card {
+    background: #fff;
+    border: 1px solid #eef2f7;
+    border-radius: 18px;
+    padding: 28px 22px;
+    box-shadow: 0 8px 26px rgba(0, 37, 84, 0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cb-card:hover { transform: translateY(-5px); box-shadow: 0 18px 38px rgba(0, 37, 84, 0.13); border-color: rgba(0, 150, 199, 0.25); }
+
+.cb-ic {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0096C7, #48CAE4);
+    color: #fff;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 18px rgba(0, 150, 199, 0.3);
+}
+
+.cb-card h4 { color: #002554; font-size: 17px; margin: 0 0 8px; }
+.cb-card p { color: #64748B; font-size: 14.5px; line-height: 1.6; margin: 0; }
+
+/* ---------- FAQ ---------- */
+.cb-faq { display: flex; flex-direction: column; gap: 14px; max-width: 800px; margin: 0 auto; }
+
+.cb-faq-item {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #eef2f7;
+    box-shadow: 0 4px 16px rgba(0, 37, 84, 0.05);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cb-faq-item[open] { border-color: rgba(0, 150, 199, 0.3); box-shadow: 0 8px 24px rgba(0, 37, 84, 0.1); }
+
+.cb-faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #002554;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.2s ease;
+}
+
+.cb-faq-item summary::-webkit-details-marker { display: none; }
+.cb-faq-item summary:hover { color: #0096C7; }
+.cb-faq-ic { color: #0096C7; flex-shrink: 0; transition: transform 0.25s ease; }
+.cb-faq-item[open] .cb-faq-ic { transform: rotate(180deg); }
+.cb-faq-item p { margin: 0; padding: 0 22px 20px; font-size: 14.5px; color: #64748B; line-height: 1.6; }
+
+/* ---------- CTA FINAL ---------- */
+.cb-cta {
+    position: relative;
+    overflow: hidden;
+    margin-top: 64px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #002554, #0077B6);
+    padding: 56px 32px;
+    text-align: center;
+    box-shadow: 0 18px 40px rgba(0, 37, 84, 0.25);
+}
+
+.cb-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(72, 202, 228, 0.25), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(0, 150, 199, 0.35), transparent 45%);
+    pointer-events: none;
+}
+
+.cb-cta-in { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+.cb-cta h3 { color: #fff; font-size: clamp(1.6rem, 4vw, 2.3rem); margin: 0 0 12px; }
+.cb-cta p { color: rgba(255, 255, 255, 0.9); font-size: clamp(1rem, 2.2vw, 1.15rem); margin: 0 0 26px; line-height: 1.6; }
+
+/* ---------- TOOLTIPS LEAFLET (acento de marca) ---------- */
+.leaflet-tooltip {
+    background: #002554;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-family: poppins, sans-serif;
+    box-shadow: 0 6px 16px rgba(0, 37, 84, 0.3);
+}
+.leaflet-tooltip-top::before { border-top-color: #002554; }
