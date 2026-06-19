@@ -1,0 +1,297 @@
+/* ===========================================================
+   APEX ELECTRÓNICA — PROCESO
+   Paleta: navy #002554 · azul #0096C7 · cyan #48CAE4
+   (El responsive vive en responsive.css)
+   =========================================================== */
+
+/* ---------- HERO ---------- */
+.pr-hero {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 5rem 2rem;
+    background: radial-gradient(circle at 50% -20%, #0a3a6b 0%, #002554 60%);
+    border-radius: 24px;
+    box-shadow: 0 20px 45px rgba(0, 37, 84, 0.3);
+}
+
+.pr-glow { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+.pr-glow-1 { width: 300px; height: 300px; background: #0096C7; opacity: 0.28; top: -130px; right: -60px; }
+.pr-glow-2 { width: 240px; height: 240px; background: #48CAE4; opacity: 0.16; bottom: -120px; left: -70px; }
+
+.pr-hero-in { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+
+.pr-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(72, 202, 228, 0.15);
+    color: #9fe6f7;
+    border: 1px solid rgba(72, 202, 228, 0.4);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.pr-hero h2 { color: #fff; font-size: clamp(2rem, 6vw, 3.1rem); line-height: 1.1; margin: 0 0 16px; }
+.pr-hl { color: #48CAE4; }
+.pr-hero p { color: rgba(255, 255, 255, 0.9); font-size: clamp(1rem, 2.4vw, 1.2rem); line-height: 1.6; max-width: 600px; margin: 0 auto 26px; }
+
+.pr-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.pr-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 26px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pr-btn-1 { background: #48CAE4; color: #002554; box-shadow: 0 8px 22px rgba(72, 202, 228, 0.35); }
+.pr-btn-1:hover { transform: translateY(-2px); background: #fff; }
+.pr-btn-2 { background: rgba(255, 255, 255, 0.08); color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.4); }
+.pr-btn-2:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.16); border-color: #fff; }
+
+/* ---------- ENCABEZADO ---------- */
+.pr-head { text-align: center; max-width: 640px; margin: 64px auto 36px; }
+
+.pr-eyebrow {
+    display: inline-block;
+    background: rgba(0, 150, 199, 0.1);
+    color: #0096C7;
+    border: 1px solid rgba(0, 150, 199, 0.25);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.pr-head h3 { color: #002554; font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.2; margin: 0 0 10px; }
+.pr-head p { color: #64748B; font-size: clamp(1rem, 2vw, 1.08rem); line-height: 1.6; margin: 0; }
+
+/* ---------- LÍNEA DE TIEMPO (zigzag) ---------- */
+.pr-timeline {
+    position: relative;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+/* línea central */
+.pr-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 12px;
+    bottom: 12px;
+    width: 3px;
+    background: linear-gradient(#0096C7, #48CAE4);
+    border-radius: 3px;
+}
+
+.pr-step {
+    position: relative;
+    width: 50%;
+    padding-bottom: 34px;
+}
+
+.pr-step:last-child { padding-bottom: 0; }
+
+/* pasos impares a la izquierda, pares a la derecha */
+.pr-step:nth-child(odd)  { left: 0;   padding-right: 46px; }
+.pr-step:nth-child(even) { left: 50%; padding-left: 46px; }
+
+/* número sobre la línea central */
+.pr-num {
+    position: absolute;
+    top: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0096C7, #48CAE4);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 20px;
+    box-shadow: 0 8px 18px rgba(0, 150, 199, 0.3);
+    border: 4px solid #F8FAFC;
+    z-index: 2;
+}
+
+.pr-step:nth-child(odd)  .pr-num { right: -28px; }
+.pr-step:nth-child(even) .pr-num { left: -28px; }
+
+.pr-step-body {
+    background: #fff;
+    border: 1px solid #eef2f7;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 8px 24px rgba(0, 37, 84, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pr-step-body:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(0, 37, 84, 0.12);
+    border-color: rgba(0, 150, 199, 0.25);
+}
+
+.pr-step-body h4 { color: #002554; font-size: 18px; margin: 0 0 6px; }
+.pr-step-body p { color: #64748B; font-size: 14.5px; line-height: 1.6; margin: 0; }
+
+/* ---------- GARANTÍA + HORARIO ---------- */
+.pr-info {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 24px;
+    margin-top: 64px;
+    align-items: stretch;
+}
+
+/* tarjeta de garantía (oscura) */
+.pr-garantia {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #002554 0%, #013a6b 100%);
+    border: 1px solid rgba(72, 202, 228, 0.18);
+    border-radius: 20px;
+    padding: 34px;
+    box-shadow: 0 16px 38px rgba(0, 37, 84, 0.22);
+}
+
+.pr-garantia::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: #0096C7;
+    filter: blur(70px);
+    opacity: 0.25;
+    top: -110px;
+    right: -70px;
+    pointer-events: none;
+}
+
+.pr-garantia-ic {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(72, 202, 228, 0.15);
+    border: 1px solid rgba(72, 202, 228, 0.3);
+    color: #48CAE4;
+    margin-bottom: 18px;
+}
+
+.pr-eyebrow-dark {
+    background: rgba(72, 202, 228, 0.12);
+    color: #9fe6f7;
+    border-color: rgba(72, 202, 228, 0.35);
+}
+
+.pr-garantia h3 { position: relative; color: #fff; font-size: 22px; margin: 0 0 12px; }
+.pr-garantia p { position: relative; color: rgba(255, 255, 255, 0.82); font-size: 15px; line-height: 1.7; margin: 0; }
+.pr-garantia strong { color: #fff; }
+
+/* tarjeta de horario (clara) */
+.pr-horario {
+    background: #fff;
+    border: 1px solid #eef2f7;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 8px 26px rgba(0, 37, 84, 0.07);
+}
+
+.pr-horario-titulo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #002554;
+    font-size: 20px;
+    margin: 0 0 6px;
+}
+
+.pr-horario-titulo svg { color: #0096C7; }
+
+.pr-horario-sub {
+    color: #64748B;
+    font-size: 14px;
+    margin: 0 0 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.pr-horario-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0;
+    border-bottom: 1px solid #f0f4f8;
+    color: #002554;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.pr-hora { color: #0096C7; }
+
+.pr-cerrado { color: #94a3b8; font-weight: 500; }
+.pr-cerrado span:last-child { color: #94a3b8; }
+
+.pr-horario-nota {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-top: 18px;
+    background: #f0fafe;
+    border-left: 3px solid #48CAE4;
+    border-radius: 0 10px 10px 0;
+    padding: 12px 14px;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.pr-horario-nota svg { color: #0096C7; flex-shrink: 0; margin-top: 1px; }
+
+/* ---------- CTA FINAL ---------- */
+.pr-cta {
+    position: relative;
+    overflow: hidden;
+    margin-top: 64px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #002554, #0077B6);
+    padding: 56px 32px;
+    text-align: center;
+    box-shadow: 0 18px 40px rgba(0, 37, 84, 0.25);
+}
+
+.pr-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(72, 202, 228, 0.25), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(0, 150, 199, 0.35), transparent 45%);
+    pointer-events: none;
+}
+
+.pr-cta-in { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+.pr-cta h3 { color: #fff; font-size: clamp(1.6rem, 4vw, 2.3rem); margin: 0 0 12px; }
+.pr-cta p { color: rgba(255, 255, 255, 0.9); font-size: clamp(1rem, 2.2vw, 1.15rem); margin: 0 0 26px; line-height: 1.6; }
