@@ -7,19 +7,52 @@ fetch('/Apex/pages/Header.html')
   .then(response => response.text())
   .then(data => {
     const header = document.getElementById('header-container');
-    if (header) {
-      header.innerHTML = data;
+    if (!header) return;
+    header.innerHTML = data;
 
-      // Menú hamburguesa (el header se inyecta aquí, por eso va dentro)
-      const menuBtn = header.querySelector('.menu-toggle');
-      const nav = header.querySelector('nav');
-      if (menuBtn && nav) {
-        menuBtn.addEventListener('click', () => nav.classList.toggle('active'));
-        // cerrar el menú al pulsar un enlace
-        nav.querySelectorAll('a').forEach(a =>
-          a.addEventListener('click', () => nav.classList.remove('active'))
-        );
+    // Menú hamburguesa (el header se inyecta aquí, por eso va dentro)
+    const menuBtn = header.querySelector('.menu-toggle');
+    const nav = header.querySelector('nav');
+    if (menuBtn && nav) {
+      function cerrarMenu() {
+        nav.classList.remove('active');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
       }
+      menuBtn.addEventListener('click', function () {
+        const abrir = !nav.classList.contains('active');
+        nav.classList.toggle('active', abrir);
+        menuBtn.classList.toggle('active', abrir);
+        menuBtn.setAttribute('aria-expanded', abrir ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', cerrarMenu);
+      });
+    }
+
+    // Página actual: resaltar enlace activo + breadcrumb
+    const NOMBRES = {
+      'index.html': 'Inicio',
+      'servicios.html': 'Servicios',
+      'proceso.html': 'Proceso',
+      'cobertura.html': 'Cobertura',
+      'sobre-nosotros.html': 'Sobre nosotros',
+      'contacto.html': 'Contacto',
+      'tienda.html': 'Tienda'
+    };
+    let archivo = location.pathname.split('/').pop();
+    if (!archivo) archivo = 'index.html';
+
+    header.querySelectorAll('nav ul a').forEach(function (a) {
+      const href = a.getAttribute('href') || '';
+      if (href.endsWith(archivo)) a.classList.add('active');
+    });
+
+    const bc = header.querySelector('#breadcrumb');
+    const bcCur = header.querySelector('#bc-current');
+    if (bc && bcCur && archivo !== 'index.html' && NOMBRES[archivo]) {
+      bcCur.textContent = NOMBRES[archivo];
+      bc.hidden = false;
     }
   });
 
