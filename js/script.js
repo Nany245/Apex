@@ -2,13 +2,17 @@
 
 // Script para llamar header/footer en cada pagina
 
+// Ruta base relativa al proyecto: '../' si estamos dentro de /pages/, si no './'
+// Esto hace que el sitio funcione abra donde abra y también en cualquier dominio.
+const BASE = location.pathname.includes('/pages/') ? '../' : './';
+
 //header
-fetch('/Apex/pages/Header.html')
+fetch(BASE + 'pages/Header.html')
   .then(response => response.text())
   .then(data => {
     const header = document.getElementById('header-container');
     if (!header) return;
-    header.innerHTML = data;
+    header.innerHTML = data.replace(/\{\{base\}\}/g, BASE);
 
     // Menú hamburguesa (el header se inyecta aquí, por eso va dentro)
     const menuBtn = header.querySelector('.menu-toggle');
@@ -57,12 +61,12 @@ fetch('/Apex/pages/Header.html')
   });
 
 //footer
-fetch('/Apex/pages/footer.html')
+fetch(BASE + 'pages/footer.html')
   .then(response => response.text())
   .then(data => {
     const footer = document.getElementById('footer-container');
     if (footer) {
-      footer.innerHTML = data;
+      footer.innerHTML = data.replace(/\{\{base\}\}/g, BASE);
     }
   });
 
