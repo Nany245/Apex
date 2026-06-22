@@ -1,36 +1,61 @@
 // El manejo del formulario de contacto vive en form.js
 
-// Script para llamar header/footer en cada pagina
+// ===========================================================
+//  Carga el header/footer (archivos .html) en cada página
+// ===========================================================
 
-// Ruta base relativa al proyecto: '../' si estamos dentro de /pages/, si no './'
-// Esto hace que el sitio funcione abra donde abra y también en cualquier dominio.
+// Ruta base relativa: '../' si estamos dentro de /pages/, si no './'
 const BASE = location.pathname.includes('/pages/') ? '../' : './';
 
-//header
-fetch(BASE + 'pages/Header.html')
+// Live Server inyecta su script de auto-recarga dentro de los fragmentos
+// (y rompe los SVG/HTML). Como el header y el footer NO llevan <script>,
+// quitamos cualquier comentario inyectado y cualquier <script> antes de meterlos.
+function prepararParcial(html) {
+  return html
+    .replace(/<!--\s*Code injected by live-server\s*-->/gi, '')
+    .replace(/<script\b[\s\S]*?<\/script>/gi, '')   // scripts completos
+    .replace(/<script\b[\s\S]*$/i, '')              // script truncado al final
+    .replace(/\{\{base\}\}/g, BASE);
+}
+
+// ---- HEADER ----
+fetch(BASE + 'pages/Header.html', { cache: 'no-store' })
   .then(response => response.text())
   .then(data => {
     const header = document.getElementById('header-container');
     if (!header) return;
-    header.innerHTML = data.replace(/\{\{base\}\}/g, BASE);
+    header.innerHTML = prepararParcial(data);
 
-    // Menú hamburguesa (el header se inyecta aquí, por eso va dentro)
+    // Menú hamburguesa (drawer lateral)
     const menuBtn = header.querySelector('.menu-toggle');
     const nav = header.querySelector('nav');
+    const overlay = header.querySelector('#nav-overlay');
+    const closeBtn = header.querySelector('.nav-close');
     if (menuBtn && nav) {
+      function abrirMenu() {
+        nav.classList.add('active');
+        if (overlay) overlay.classList.add('active');
+        menuBtn.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('menu-open');
+      }
       function cerrarMenu() {
         nav.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
         menuBtn.classList.remove('active');
         menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
       }
       menuBtn.addEventListener('click', function () {
-        const abrir = !nav.classList.contains('active');
-        nav.classList.toggle('active', abrir);
-        menuBtn.classList.toggle('active', abrir);
-        menuBtn.setAttribute('aria-expanded', abrir ? 'true' : 'false');
+        if (nav.classList.contains('active')) cerrarMenu(); else abrirMenu();
       });
+      if (closeBtn) closeBtn.addEventListener('click', cerrarMenu);
+      if (overlay) overlay.addEventListener('click', cerrarMenu);
       nav.querySelectorAll('a').forEach(function (a) {
         a.addEventListener('click', cerrarMenu);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') cerrarMenu();
       });
     }
 
@@ -41,8 +66,7 @@ fetch(BASE + 'pages/Header.html')
       'proceso.html': 'Proceso',
       'cobertura.html': 'Cobertura',
       'sobre-nosotros.html': 'Sobre nosotros',
-      'contacto.html': 'Contacto',
-      'tienda.html': 'Tienda'
+      'contacto.html': 'Contacto'
     };
     let archivo = location.pathname.split('/').pop();
     if (!archivo) archivo = 'index.html';
@@ -60,44 +84,36 @@ fetch(BASE + 'pages/Header.html')
     }
   });
 
-//footer
-fetch(BASE + 'pages/footer.html')
+// ---- FOOTER ----
+fetch(BASE + 'pages/footer.html', { cache: 'no-store' })
   .then(response => response.text())
   .then(data => {
     const footer = document.getElementById('footer-container');
-    if (footer) {
-      footer.innerHTML = data.replace(/\{\{base\}\}/g, BASE);
-    }
+    if (footer) footer.innerHTML = prepararParcial(data);
   });
 
-//fade-out
+// ---- Scroll suave en anclas + transición fade entre páginas ----
 document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function(e) {
-        const href = this.href;
+  link.addEventListener("click", function (e) {
+    const href = this.href;
+    if (!href) return;
 
-        if (!href) return;
-
-        // Enlaces internos de la misma página: scroll suave sin recargar
-        const hash = this.getAttribute("href");
-        if (hash && hash.startsWith("#")) {
-            const destino = document.querySelector(hash);
-            if (destino) {
-                e.preventDefault();
-                destino.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-            return;
-        }
-
-        // Enlaces externos o que abren en nueva pestaña: no interceptar
-        if (this.target === "_blank" || /^(mailto:|tel:|https?:\/\/)/.test(hash || "")) {
-            return;
-        }
-
+    const hash = this.getAttribute("href");
+    if (hash && hash.startsWith("#")) {
+      const destino = document.querySelector(hash);
+      if (destino) {
         e.preventDefault();
-        document.body.classList.add("fade-out");
+        destino.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
 
-        setTimeout(() => {
-            window.location.href = href;
-        }, 300);
-    });
+    if (this.target === "_blank" || /^(mailto:|tel:|https?:\/\/)/.test(hash || "")) {
+      return;
+    }
+
+    e.preventDefault();
+    document.body.classList.add("fade-out");
+    setTimeout(() => { window.location.href = href; }, 300);
+  });
 });

@@ -38,8 +38,8 @@
                         Solicitar visita 
                         <svg class="arrow-svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
-                    <a href="pages/tienda.html" class="btn-ghost">
-                        Ver tienda
+                    <a href="pages/servicios.html" class="btn-ghost">
+                        Ver servicios
                         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                     </a>
                 </div>
@@ -77,10 +77,6 @@
             </div>
         </section>
 
-        <section class="store" id="tienda">
-            
-        </section>
-
         <section class="reviews" id="clientes">
             <div class="section-kicker">04 — Clientes</div>
             <h2 class="section-h2" style="margin-top:10px">Lo que dicen<br>quienes ya confiaron.</h2>
@@ -96,28 +92,5 @@
 
     <div id="footer-container"></div>
     <script src="js/script.js"></script>
-    <script>
-        // Funcionalidad del carrusel de tienda
-        let storePos = 0;
-        const storeStep = 1;
-        function scrollStore(dir) {
-            const track = document.getElementById('track');
-            if(!track) return;
-            const cards = track.querySelectorAll('.product-card');
-            if(!cards.length) return;
-            const card = cards[0];
-            const cardW = card.offsetWidth + 20;
-            const max = Math.max(0, cards.length - 4);
-            storePos = Math.max(0, Math.min(max, storePos + dir * storeStep));
-            track.style.transform = `translateX(-${storePos * cardW}px)`;
-        }
-        // Filtro simple para los pills
-        document.querySelectorAll('.pill').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
-                this.classList.add('on');
-            });
-        });
-    </script>
 </body>
 </html>
