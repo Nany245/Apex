@@ -31,6 +31,7 @@ main {
     background: var(--navy);
     display: grid;
     grid-template-columns: 1fr;
+    align-items: center;
     gap: 0;
     padding: 72px 0 80px;
     position: relative;
@@ -41,6 +42,54 @@ main {
     border-radius: 0 !important;
     -webkit-border-radius: 0 !important;
 }
+
+/* ---- Video de fondo a pantalla completa ---- */
+.hero-bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -28%;
+    height: 156%;
+    z-index: 0;
+    overflow: hidden;
+    will-change: transform;
+}
+
+/* El video ocupa la mitad derecha del hero y se funde con el navy
+   por la izquierda, arriba y abajo (bordes suaves, sin cortes duros) */
+.hero-video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 52%;
+    object-fit: cover;
+    object-position: center;
+    /* sharpen (SVG) + ligero ajuste de color para ganar definición */
+    filter: url(#hero-sharpen) brightness(0.97) saturate(1.18) contrast(1.07);
+    -webkit-mask-image:
+        linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 14%, #000 34%),
+        linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    -webkit-mask-composite: source-in;
+            mask-image:
+        linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 14%, #000 34%),
+        linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+            mask-composite: intersect;
+}
+
+/* leve oscurecido para integrar el video con el hero y dar contraste al texto */
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, var(--navy) 0%, rgba(0, 18, 42, 0.55) 38%, transparent 62%),
+        linear-gradient(0deg, rgba(0, 18, 42, 0.45) 0%, transparent 32%, transparent 80%, rgba(0, 18, 42, 0.3) 100%);
+}
+
+/* el texto y decoraciones quedan por encima del video */
+.hero-left { z-index: 2; }
+.hero-lines,
+.hero-glow { z-index: 1; }
 
 .hero-lines {
     position: absolute;
@@ -764,9 +813,23 @@ main {
     .hero {
         grid-template-columns: 1fr;
     }
-    
-    .hero-right {
-        display: none;
+
+    /* en móvil el video vertical llena toda la pantalla */
+    .hero-video {
+        top: 50%;
+        left: 50%;
+        right: auto;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        object-position: center 32%;
+        -webkit-mask-image: none;
+                mask-image: none;
+    }
+
+    .hero-bg-overlay {
+        background:
+            linear-gradient(0deg, rgba(0, 18, 42, 0.82) 0%, rgba(0, 18, 42, 0.25) 45%, rgba(0, 18, 42, 0.55) 100%);
     }
     
     .services .section-head {
