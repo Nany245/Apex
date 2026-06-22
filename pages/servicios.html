@@ -4,8 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Apex Electrónica | Servicios</title>
-	<link rel="stylesheet" href="../css/services.css">
+	<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/services.css">
 	<link rel="stylesheet" href="../css/responsive.css">
 	<link rel="icon" href="../img/favicon.ico" sizes="any">
 	<link rel="icon" type="image/png" href="../img/favicon.png">
@@ -15,90 +16,105 @@
 	<div id="header-container"></div>
 
 	<main>
-
-		<section class="hero">
-			<hgroup>
-			<p class="eyebrow">¿Qué ofrecemos?</p>
-		</hgroup>
-			<h2><bold>Nuestros Servicios</bold></h2>
-			<p>Diagnóstico, reparación y mantenimiento para una amplia variedad de equipos electrónicos.</p>
-		</section>
-
-		<section id="services">
-			<div class="service-card">
-				<img src="https://images.unsplash.com/photo-1550041473-d296a3a8a18a?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Reparación">
-				<h3>Reparación</h3>
-				<p>Reparamos todo tipo de dispositivos electrónicos, desde smartphones hasta computadoras.</p>
-			</div>
-			<div class="service-card">
-				<img src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mantenimiento">
-				<h3>Mantenimiento</h3>
-				<p>Ofrecemos servicios de mantenimiento preventivo para prolongar la vida útil de tus dispositivos.</p>
-			</div>
-			<div class="service-card">
-				<img src="https://images.unsplash.com/photo-1768633647910-7e6fb53e5b0f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Soporte Técnico">
-				<h3>Soporte Técnico</h3>
-				<p>Brindamos soporte técnico para resolver cualquier problema que puedas tener con tus dispositivos.</p>
+		<!-- HERO -->
+		<section class="svc-hero">
+			<span class="svc-glow svc-glow-1" aria-hidden="true"></span>
+			<span class="svc-glow svc-glow-2" aria-hidden="true"></span>
+			<div class="svc-hero-in">
+				<span class="svc-badge reveal" data-delay="1">¿Qué ofrecemos?</span>
+				<h2 class="reveal" data-delay="2">Nuestros <span class="svc-hl">servicios</span></h2>
+				<p class="reveal" data-delay="3">Diagnóstico, reparación y mantenimiento para una amplia variedad de equipos electrónicos. Técnicos certificados, trato cercano y garantía por escrito.</p>
+				<div class="svc-actions reveal" data-delay="4">
+					<a href="contacto.html" class="svc-btn svc-btn-1">
+						Agendar reparación
+						<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+					</a>
+					<a href="https://wa.me/18298766624" target="_blank" rel="noopener" class="svc-btn svc-btn-2">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+						WhatsApp
+					</a>
+				</div>
 			</div>
 		</section>
 
-		<section id="devices">
-			<div id="devices-header">
-				<h2>Dispositivos que Reparamos</h2>
-				<p>En Apex Electrónica, reparamos una amplia variedad de dispositivos electrónicos, incluyendo:</p>
-			</div>
-
-			<div class="devices-card">
-				<h3>Bocinas</h3>
-				<div class="inner-card">
-					<img src="../img/Bocina.jpg" alt="bocinas">
-					<p>Reparamos amplificadores, drivers, fuentes de alimentación, conexiones Bluetooth, puertos de carga y fallas de audio o distorsión.</p>
+		<!-- LO QUE HACEMOS -->
+		<div class="svc-head reveal">
+			<span class="svc-eyebrow">Cómo te ayudamos</span>
+			<h3>Tres formas de cuidar tus equipos</h3>
+		</div>
+		<section class="svc-grid3">
+			<article class="svc-card reveal">
+				<div class="svc-card-img"><img src="https://images.unsplash.com/photo-1550041473-d296a3a8a18a?q=80&w=600&auto=format&fit=crop" alt="Reparación" loading="lazy" decoding="async" width="600" height="190"></div>
+				<div class="svc-card-body">
+					<h4>Reparación</h4>
+					<p>Reparamos todo tipo de equipos electrónicos, desde televisores y computadoras hasta electrodomésticos del día a día.</p>
 				</div>
-			</div>
-			<div class="devices-card">
-				<h3>Auriculares</h3>
-				<div class="inner-card">
-					<img src="../img/auriculares.jpg" alt="auriculares">
-					<p>Reparamos bocinas internas, micrófonos, diademas, conectores, baterías y problemas de conexión Bluetooth o sonido intermitente.</p>
+			</article>
+			<article class="svc-card reveal">
+				<div class="svc-card-img"><img src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?q=80&w=600&auto=format&fit=crop" alt="Mantenimiento" loading="lazy" decoding="async" width="600" height="190"></div>
+				<div class="svc-card-body">
+					<h4>Mantenimiento</h4>
+					<p>Mantenimiento preventivo para prolongar la vida útil de tus equipos y evitar fallas antes de que aparezcan.</p>
 				</div>
-			</div>
-			<div class="devices-card">
-				<h3>Licuadoras</h3>
-				<div class="inner-card">
-					<img src="../img/Licuadora.jpg" alt="licuadoras">
-					<p>Reparamos motores, cuchillas, acoples, interruptores, cables de alimentación y fallas de encendido o sobrecalentamiento.</p>
+			</article>
+			<article class="svc-card reveal">
+				<div class="svc-card-img"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=600&auto=format&fit=crop" alt="Soporte técnico" loading="lazy" decoding="async" width="600" height="190"></div>
+				<div class="svc-card-body">
+					<h4>Soporte técnico</h4>
+					<p>Te orientamos y resolvemos cualquier duda o problema con tus dispositivos, con explicaciones claras y sin tecnicismos.</p>
 				</div>
-			</div>
-			<div class="devices-card">
-				<h3>Televisores</h3>
-				<div class="inner-card">
-					<img src="../img/Television.jpg" alt="televisores">
-					<p>Reparamos pantallas, retroiluminación, fuentes de poder, puertos HDMI, audio y problemas de imagen o encendido.</p>
-				</div>
-			</div>
-			<div class="devices-card">
-				<h3>Computadoras</h3>
-				<div class="inner-card">
-					<img src="../img/Computadoras.jpg" alt="computadoras">
-					<p>Reparamos placas madre, discos duros/SSD, memorias RAM, sistemas de enfriamiento, fuentes de poder y problemas de software o rendimiento.</p>
-				</div>
-			</div>
-
-			<p>Si tienes un dispositivo que no está en esta lista, no dudes en contactarnos para verificar si podemos ayudarte.</p>
-		</section>
-		<hr>
-
-
-		<section class="contact">
-			<h2>Contáctanos</h2>
-			<p>Si tienes alguna pregunta o necesitas más información sobre nuestros servicios, no dudes en contactarnos.</p>
-			<a href="contacto.html">Agenda tu reparación</a>
+			</article>
 		</section>
 
-		
+		<!-- DISPOSITIVOS -->
+		<div class="svc-head reveal">
+			<span class="svc-eyebrow">Equipos</span>
+			<h3>Dispositivos que reparamos</h3>
+			<p>Atendemos una amplia variedad de equipos electrónicos. Estos son algunos de los más comunes:</p>
+		</div>
+		<section class="svc-devices">
+			<article class="dev-card reveal">
+				<div class="dev-img"><img src="../img/Television.jpg" alt="Televisores" loading="lazy" decoding="async" width="360" height="180"><span class="dev-tag">Televisores</span></div>
+				<div class="dev-body"><p>Pantallas, retroiluminación, fuentes de poder, puertos HDMI, audio y problemas de imagen o encendido.</p></div>
+			</article>
+			<article class="dev-card reveal">
+				<div class="dev-img"><img src="../img/Computadoras.jpg" alt="Computadoras" loading="lazy" decoding="async" width="360" height="180"><span class="dev-tag">Computadoras</span></div>
+				<div class="dev-body"><p>Placas madre, discos duros/SSD, memorias RAM, enfriamiento, fuentes de poder y problemas de software o rendimiento.</p></div>
+			</article>
+			<article class="dev-card reveal">
+				<div class="dev-img"><img src="../img/Bocina.jpg" alt="Bocinas" loading="lazy" decoding="async" width="360" height="180"><span class="dev-tag">Bocinas</span></div>
+				<div class="dev-body"><p>Amplificadores, drivers, fuentes de alimentación, conexión Bluetooth, puertos de carga y fallas de audio o distorsión.</p></div>
+			</article>
+			<article class="dev-card reveal">
+				<div class="dev-img"><img src="../img/Auriculares.jpg" alt="Auriculares" loading="lazy" decoding="async" width="360" height="180"><span class="dev-tag">Auriculares</span></div>
+				<div class="dev-body"><p>Bocinas internas, micrófonos, diademas, conectores, baterías y problemas de conexión o sonido intermitente.</p></div>
+			</article>
+			<article class="dev-card reveal">
+				<div class="dev-img"><img src="../img/Licuadora.jpg" alt="Licuadoras" loading="lazy" decoding="async" width="360" height="180"><span class="dev-tag">Licuadoras</span></div>
+				<div class="dev-body"><p>Motores, cuchillas, acoples, interruptores, cables de alimentación y fallas de encendido o sobrecalentamiento.</p></div>
+			</article>
+		</section>
+
+		<p class="svc-note reveal">¿Tu equipo no está en la lista? Escríbenos — casi siempre tenemos solución para equipos no listados.</p>
+
+		<!-- CTA FINAL -->
+		<section class="svc-cta">
+			<div class="svc-cta-in reveal reveal-scale">
+				<h3>¿Listo para reparar tu equipo?</h3>
+				<p>Cuéntanos qué necesitas y agenda tu visita. Diagnóstico claro y sin compromiso.</p>
+				<div class="svc-actions">
+					<a href="contacto.html" class="svc-btn svc-btn-1">Agenda tu reparación</a>
+					<a href="https://wa.me/18298766624" target="_blank" rel="noopener" class="svc-btn svc-btn-2">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+						WhatsApp
+					</a>
+				</div>
+			</div>
+		</section>
 	</main>
 
 	<div id="footer-container"></div>
 	<script src="../js/script.js"></script>
+	<script src="../js/animations.js"></script>
 </body>
 </html>

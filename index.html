@@ -14,10 +14,24 @@
 </head>
 <body>
 
+    <!-- filtro de nitidez para recuperar definición del video del hero -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <filter id="hero-sharpen">
+            <feConvolveMatrix order="3" preserveAlpha="true"
+                kernelMatrix="-0.12 -0.12 -0.12 -0.12 1.96 -0.12 -0.12 -0.12 -0.12"/>
+        </filter>
+    </svg>
+
     <div id="header-container"></div>
     <main>
 
         <section class="hero" id="inicio">
+            <div class="hero-bg">
+                <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="video/hero.mp4" type="video/mp4">
+                </video>
+                <div class="hero-bg-overlay"></div>
+            </div>
             <div class="hero-lines"></div>
             <div class="hero-glow"></div>
             <div class="hero-left">
@@ -31,15 +45,15 @@
                     <span class="line-alt">importa.</span>
                 </h1>
                 <p class="hero-sub">
-                    Técnicos certificados para televisores, aires acondicionados, lavadoras, refrigeradoras y electrónica en general. Visita gratis. Garantía escrita por 6 meses en cada trabajo.
+                    Técnicos certificados para televisores, aires acondicionados, lavadoras, refrigeradoras y electrónica en general. Visita gratis. Garantía por escrito según las condiciones de cada equipo.
                 </p>
                 <div class="hero-cta">
                     <a href="pages/contacto.html" class="btn-fill">
-                        Solicitar visita 
+                        Solicitar visita
                         <svg class="arrow-svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
-                    <a href="pages/tienda.html" class="btn-ghost">
-                        Ver tienda
+                    <a href="pages/servicios.html" class="btn-ghost">
+                        Ver servicios
                         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                     </a>
                 </div>
@@ -71,18 +85,14 @@
                     <div class="step-card"><div class="step-dot"></div><div class="step-n">Paso 01</div><div class="step-title">Cuéntanos el problema</div><div class="step-desc">Llámanos, escríbenos por WhatsApp o usa el formulario. En minutos confirmamos tu solicitud.</div></div>
                     <div class="step-card"><div class="step-dot"></div><div class="step-n">Paso 02</div><div class="step-title">Asignamos el técnico</div><div class="step-desc">Seleccionamos al técnico certificado para tu equipo. Te contacta en menos de 2 horas para coordinar.</div></div>
                     <div class="step-card"><div class="step-dot"></div><div class="step-n">Paso 03</div><div class="step-title">Diagnóstico en casa</div><div class="step-desc">El técnico visita tu hogar, revisa el equipo y te da un presupuesto claro. Sin obligación de pago.</div></div>
-                    <div class="step-card" style="padding-right:0"><div class="step-dot" style="background:#fff;box-shadow:0 0 0 2px #fff"></div><div class="step-n">Paso 04</div><div class="step-title">Reparado y garantizado</div><div class="step-desc">Aprobado el presupuesto, reparamos en el sitio. Emitimos garantía escrita por 6 meses.</div></div>
+                    <div class="step-card" style="padding-right:0"><div class="step-dot" style="background:#fff;box-shadow:0 0 0 2px #fff"></div><div class="step-n">Paso 04</div><div class="step-title">Reparado y garantizado</div><div class="step-desc">Aprobado el presupuesto, reparamos en el sitio. Emitimos garantía por escrito según las condiciones del equipo.</div></div>
                 </div>
-                <div class="how-cta-row"><a href="pages/contacto.html" class="btn-fill">Contáctanos</a><span class="how-cta-note"></span></div>
+                <div class="how-cta-row"><a href="pages/contacto.html" class="btn-fill">Contáctanos</a><span class="how-cta-note">Te respondemos en menos de 2 horas.</span></div>
             </div>
         </section>
 
-        <section class="store" id="tienda">
-            
-        </section>
-
         <section class="reviews" id="clientes">
-            <div class="section-kicker">04 — Clientes</div>
+            <div class="section-kicker">03 — Clientes</div>
             <h2 class="section-h2" style="margin-top:10px">Lo que dicen<br>quienes ya confiaron.</h2>
             <div class="reviews-grid">
                 <div class="review-card"><div class="rv-stars">★★★★★</div><p class="rv-text" style="font-size:18px;line-height:1.65">"El técnico llegó puntual, diagnosticó el problema en 15 minutos y lo resolvió en la misma visita. El precio fue justo y me dieron garantía. Lo recomiendo 100%."</p><div class="rv-foot"><div class="rv-avatar" style="background:var(--sky)">MG</div><div><div class="rv-name">María González</div><div class="rv-meta">Reparación de Lavadora </div></div></div></div>
@@ -97,27 +107,28 @@
     <div id="footer-container"></div>
     <script src="js/script.js"></script>
     <script>
-        // Funcionalidad del carrusel de tienda
-        let storePos = 0;
-        const storeStep = 1;
-        function scrollStore(dir) {
-            const track = document.getElementById('track');
-            if(!track) return;
-            const cards = track.querySelectorAll('.product-card');
-            if(!cards.length) return;
-            const card = cards[0];
-            const cardW = card.offsetWidth + 20;
-            const max = Math.max(0, cards.length - 4);
-            storePos = Math.max(0, Math.min(max, storePos + dir * storeStep));
-            track.style.transform = `translateX(-${storePos * cardW}px)`;
+    // Parallax: el video del hero baja un poco más lento que el scroll
+    (function () {
+        var bg = document.querySelector('.hero-bg');
+        var hero = document.getElementById('inicio');
+        if (!bg || !hero) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        var ticking = false;
+        function update() {
+            var y = window.scrollY || window.pageYOffset;
+            if (hero.getBoundingClientRect().bottom > 0) {
+                var max = hero.offsetHeight * 0.26;
+                var shift = Math.min(y * 0.5, max);
+                bg.style.transform = 'translate3d(0,' + shift.toFixed(1) + 'px,0)';
+            }
+            ticking = false;
         }
-        // Filtro simple para los pills
-        document.querySelectorAll('.pill').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
-                this.classList.add('on');
-            });
-        });
+        window.addEventListener('scroll', function () {
+            if (!ticking) { requestAnimationFrame(update); ticking = true; }
+        }, { passive: true });
+        update();
+    })();
     </script>
 </body>
 </html>
