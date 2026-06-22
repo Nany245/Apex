@@ -126,7 +126,7 @@ main {
     background: var(--sky);
     color: #fff;
     border: none;
-    border-radius: 0 !important;
+    border-radius: 8px;
     padding: 14px 26px;
     font-size: 14px;
     font-weight: 600;
